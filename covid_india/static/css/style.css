@@ -1,0 +1,25 @@
+.icons{
+  background-color: #141212;
+  color: white;
+  position: relative;
+  border: 1px solid gray;
+  padding-top: 30px;
+  border-radius: 8px;
+  height: 120px;
+}
+th{
+  position: relative;
+  padding: 10px;
+}
+#rotate{
+  -webkit-animation: rotation 2s infinite linear;
+}
+
+@-webkit-keyframes rotation {
+		from {
+				-webkit-transform: rotate(0deg);
+		}
+		to {
+				-webkit-transform: rotate(359deg);
+		}
+}

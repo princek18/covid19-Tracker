@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Tracker</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.0/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.0/css/bulma-rtl.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.0/css/bulma-rtl.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.0/css/bulma.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Recursive:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  </head>
+  <body>
+    <nav style="border-radius: 5px;" class="navbar navbar-dark bg-dark">
+      <a class="navbar-brand">
+        <h4 style="font-family: 'Recursive', sans-serif;">Covid19 Tracker</h4>
+      </a>
+    </nav>
+    <div align="center">
+      <img style="margin: 20px; height: 80px;" src="{% static "images/logo.png" %}" alt="" id="rotate">
+    </div>
+<div class="container" style="margin-top: 20px;">
+  <div class="row" style="margin: 25px;">
+    <div class="card col-md" style="border-left: 7px solid red; width: 18rem; margin: 10px; color: red; font-weight: 600;">
+      <div class="card-body">
+        <p class="card-text">Total number of Confirmed Cases:</p>
+        <h5 class="card-title">{{ t_confirmed }}</h5>
+      </div>
+    </div>
+    <div class="card col-md" style="border-left: 7px solid #07f046; width: 18rem; margin: 10px; color: #07f046; font-weight:600;">
+      <div class="card-body">
+        <p class="card-text">Total number of Recovered Cases:</p>
+        <h5 class="card-title">{{ t_recovered }}</h5>
+      </div>
+    </div>
+    <div class="card col-md" style=" border-left: 7px solid gray; width: 18rem; margin: 10px; color: gray; font-weight:600;">
+      <div class="card-body">
+        <p class="card-text">Total number of Deceased Cases:</p>
+        <h5 class="card-title">{{ t_deceased }}</h5>
+      </div>
+    </div>
+  </div>
+</div>
+    <div class="container" style="border-radius: 5px; border: 1px solid black; margin-top: 40px; margin-bottom: 100px;">
+      <div class="row row-cols" style="padding: 5px; margin-bottom: 5px;">
+        <div class="col-4"><strong>States</strong></div>
+        <div class="col-2"><strong>Confirmed</strong></div>
+        <div class="col-2"><strong>Recovered</strong></div>
+        <div class="col-2"><strong>Deceased</strong></div>
+        <div class="col-2"><strong>Tested</strong></div>
+      </div>
+      {% for i in states_id %}
+      <div class="row row-cols" style="padding: 5px; margin-bottom: 5px;">
+    <div class="col-4">{{ i.state }}</div>
+    <div class="col-2">{{ i.confirmed }}</div>
+    <div class="col-2">{{ i.recovered }}</div>
+    <div class="col-2">{{ i.deceased }}</div>
+    <div class="col-2">{{ i.tested }}</div>
+  </div>
+      {% endfor %}
+    </div>
+  </body>
+  <footer class="fixed-bottom" style="border: 1px solid black; height: 78px; background-color: #102b29; border-radius: 5px;">
+    <div id="navbarBasicExample" class="navbar-menu">
+      <div class="navbar-start">
+        <h5 style="padding: 5px; color: white; font-family: 'Recursive', sans-serif;">Designed by Prince Kumar</h5>
+      </div>
+      </div>
+        <div align="center">
+          <table>
+              <tr>
+                <th style="padding: 10px;"><a href="https://www.facebook.com/profile.php?id=100004663235882"><i class="fa fa-facebook" style="color:#3b5998;"></i></a></th>
+                <th style="padding: 10px;"><a href="https://twitter.com/princek22012330"><i class="fa fa-twitter" style="color:#00acee;"></i></a></th>
+                <th style="padding: 10px;"><a href="https://www.instagram.com/princek18/"><i class="fa fa-instagram" style="color:#E1306C;"></i></a></th>
+              </tr>
+          </table>
+        </div>
+  </footer>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+</html>
